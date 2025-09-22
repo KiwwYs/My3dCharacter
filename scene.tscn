@@ -1,24 +1,71 @@
-[gd_scene load_steps=2 format=3 uid="uid://cimx6mgc2o7i6"]
+[gd_scene load_steps=13 format=3 uid="uid://cimx6mgc2o7i6"]
 
+[ext_resource type="Script" uid="uid://btl20u0n5ymtw" path="res://scene.gd" id="1_nxogm"]
 [ext_resource type="PackedScene" uid="uid://fq7twt3wl255" path="res://Myboi.tscn" id="1_ulcgi"]
+[ext_resource type="PackedScene" uid="uid://b7w5ai6e3hf6e" path="res://ground.tscn" id="3_3253y"]
+[ext_resource type="PackedScene" uid="uid://cr5gj2dvtjn28" path="res://asset/KayKit_Forest_Nature_Pack_1.0_FREE/Assets/gltf/Tree_2_B_Color1.gltf" id="5_fy5k1"]
+[ext_resource type="PackedScene" uid="uid://lit3ksalljlx" path="res://asset/KayKit_Forest_Nature_Pack_1.0_FREE/Assets/gltf/Rock_3_H_Color1.gltf" id="6_5c1cw"]
+[ext_resource type="PackedScene" uid="uid://c674noirbsh1n" path="res://asset/KayKit_Forest_Nature_Pack_1.0_FREE/Assets/gltf/Grass_2_B_Color1.gltf" id="7_akxrc"]
+[ext_resource type="PackedScene" uid="uid://bkjbfpbr6ngg3" path="res://asset/KayKit_Forest_Nature_Pack_1.0_FREE/Assets/gltf/Grass_2_A_Singlesided_Color1.gltf" id="8_gu47o"]
+[ext_resource type="PackedScene" uid="uid://biy5hg1o3ts8i" path="res://asset/KayKit_Forest_Nature_Pack_1.0_FREE/Assets/gltf/Grass_2_D_Color1.gltf" id="9_8hm71"]
+[ext_resource type="PackedScene" uid="uid://btlytrmqud5ca" path="res://asset/KayKit_Forest_Nature_Pack_1.0_FREE/Assets/gltf/Tree_3_A_Color1.gltf" id="10_223my"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_u3cyc"]
+sky_top_color = Color(0.275095, 0.336436, 1, 1)
+sky_horizon_color = Color(0.149108, 0.731782, 0.825389, 1)
+sky_curve = 0.172305
+ground_horizon_color = Color(1.54018e-06, 0.466604, 0.0603145, 1)
+
+[sub_resource type="Sky" id="Sky_m7jmp"]
+sky_material = SubResource("ProceduralSkyMaterial_u3cyc")
+
+[sub_resource type="Environment" id="Environment_y2354"]
+background_mode = 2
+sky = SubResource("Sky_m7jmp")
 
 [node name="Node3D" type="Node3D"]
+script = ExtResource("1_nxogm")
 
-[node name="Walking" parent="." instance=ExtResource("1_ulcgi")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.133895, 0.0166588, 0.0241795)
+[node name="boi1" parent="." instance=ExtResource("1_ulcgi")]
+transform = Transform3D(0.66343, 0, -0.748238, 0, 1, 0, 0.748238, 0, 0.66343, 20.6016, 0.0166588, 0.0241795)
 
-[node name="Walking2" parent="." instance=ExtResource("1_ulcgi")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.25654, 0.0166588, 0.0241795)
+[node name="boi2" parent="." instance=ExtResource("1_ulcgi")]
+transform = Transform3D(0.715046, 0, 0.699077, 0, 1, 0, -0.699077, 0, 0.715046, -11.8733, 0.0166588, 0.0241795)
 
-[node name="Walking3" parent="." instance=ExtResource("1_ulcgi")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.62394, 0.0166588, 0.0241795)
+[node name="boi3" parent="." instance=ExtResource("1_ulcgi")]
+transform = Transform3D(0.591099, 0, 0.806599, 0, 1, 0, -0.806599, 0, 0.591099, -6.62394, 0.0166588, -7.8753)
 
-[node name="Walking4" parent="." instance=ExtResource("1_ulcgi")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.1915, 0.0166588, 0.0241795)
+[node name="boi4" parent="." instance=ExtResource("1_ulcgi")]
+transform = Transform3D(-0.199453, 0, -0.979907, 0, 1, 0, 0.979907, 0, -0.199453, -1.98921, 0.000781059, -6.42975)
 
 [node name="Camera3D" type="Camera3D" parent="."]
 transform = Transform3D(0.983914, 0.0624199, -0.167385, -0.020946, 0.970817, 0.238906, 0.177412, -0.231557, 0.956507, -0.784149, 8.17547, 16.4734)
 fov = 71.2185
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
-transform = Transform3D(0.998416, 0, 0.0562572, 0, 1, 0, -0.0562572, 0, 0.998416, 1.15593, 26.1113, 3.41322)
+transform = Transform3D(0.998416, 0, 0.0562572, 0, 1, 0, -0.0562572, 0, 0.998416, -24.2288, 33.2525, 16.2624)
+shadow_enabled = true
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_y2354")
+
+[node name="ground" parent="." instance=ExtResource("3_3253y")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7, 0, 64)
+
+[node name="Tree_2_B_Color12" parent="." instance=ExtResource("5_fy5k1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.1975, 6.11253, -14.7246)
+
+[node name="Rock_3_H_Color12" parent="." instance=ExtResource("6_5c1cw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.157, 4.66728, -13.0854)
+
+[node name="Grass_2_B_Color12" parent="." instance=ExtResource("7_akxrc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.869582, 0.0312663, 5.86392)
+
+[node name="Grass_2_A_Singlesided_Color12" parent="." instance=ExtResource("8_gu47o")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.13132, 0.0312663, 1.71303)
+
+[node name="Grass_2_D_Color12" parent="." instance=ExtResource("9_8hm71")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.965, 0.0477361, -1.62374)
+
+[node name="Tree_3_A_Color12" parent="." instance=ExtResource("10_223my")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.64634, 5.26332, 10.4573)
