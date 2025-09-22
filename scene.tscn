@@ -1,8 +1,24 @@
 [gd_scene load_steps=2 format=3 uid="uid://cimx6mgc2o7i6"]
 
-[ext_resource type="PackedScene" uid="uid://44blm6au571k" path="res://asset/Walking.fbx" id="1_ulcgi"]
+[ext_resource type="PackedScene" uid="uid://fq7twt3wl255" path="res://Myboi.tscn" id="1_ulcgi"]
 
 [node name="Node3D" type="Node3D"]
 
-[node name="Myboi" parent="." instance=ExtResource("1_ulcgi")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.13318, -2.38419e-07, -2.66761)
+[node name="Walking" parent="." instance=ExtResource("1_ulcgi")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.133895, 0.0166588, 0.0241795)
+
+[node name="Walking2" parent="." instance=ExtResource("1_ulcgi")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.25654, 0.0166588, 0.0241795)
+
+[node name="Walking3" parent="." instance=ExtResource("1_ulcgi")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.62394, 0.0166588, 0.0241795)
+
+[node name="Walking4" parent="." instance=ExtResource("1_ulcgi")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.1915, 0.0166588, 0.0241795)
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(0.983914, 0.0624199, -0.167385, -0.020946, 0.970817, 0.238906, 0.177412, -0.231557, 0.956507, -0.784149, 8.17547, 16.4734)
+fov = 71.2185
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(0.998416, 0, 0.0562572, 0, 1, 0, -0.0562572, 0, 0.998416, 1.15593, 26.1113, 3.41322)
